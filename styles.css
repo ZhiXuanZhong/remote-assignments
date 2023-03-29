@@ -36,14 +36,11 @@ body{
 /* BLOCKS(components) */
 /* .header{} */
 
-.header {
-    background-color: #EEEEEE;
-    padding: 0 3%;
-}
-
 .main-nav {
     display: flex;
     justify-content:space-between;
+    padding: 0 3%;
+    background-color: #EEEEEE;
 }
 
 
