@@ -97,11 +97,15 @@ body{
     width: 100%;
 }
 
-.container__greeting {
+.container__sec-greeting {
     justify-content: center;
     max-width: unset;
     height: 12em;
 
+}
+
+.container__sec-cards{
+    margin-bottom: 3em;
 }
 
 .container__title{
