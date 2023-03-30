@@ -43,7 +43,6 @@ body{
 }
 
 /* BLOCKS(components) */
-/* .header{} */
 
 .main-nav {
     display: flex;
@@ -77,13 +76,13 @@ body{
 }
 
 /* ELEMENT */
-/* no standalone meaning, semantically tie to the block */
-/* header__btn */
 
 .main-nav__logo{
     display: flex;
     justify-content: center;
     align-items: center;
+    /* logo height determines the height of the navbar */
+    min-height: 3.5em;
 }
 
 .main-nav__menu{
@@ -123,8 +122,6 @@ body{
 
 
 /* MODIFIERS(incremental style changes) */
-/* .btn--secondary{} */
-/* apply modifier to the block or element*/
 
 .container--bg-light{
     background-color: #C8DEF0;
@@ -152,8 +149,6 @@ body{
 .btn--primary {
     background: #D9EFFF;
 }
-/* header__btn--modifier (element) */
-/* header--modifier (block)*/
 
 
 /* MEDIA QUERY */
@@ -170,8 +165,8 @@ body{
     /* UTILITIES */
 
     #ham-label {
-        display: inline-block;
-        font-size: 2.5rem;
+        display: flex;
+        align-items: center;
     }
 
     #ham-checkbox:checked ~ .main-nav__menu{
@@ -182,14 +177,14 @@ body{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        position: relative;
-        top: 25%;
+        /* hamburger size */
         width: 30px;
         height: 20px;
     }
     
     .icon-bar {
         width: 100%;
+        /* hamburger stroke width */
         height: 1.5px;
         background-color: black;
     }
@@ -209,7 +204,6 @@ body{
 
     .main-nav__logo {
         padding-left: 7%;
-        min-height: 3.5em;
     }
 
     .main-nav__ham {
@@ -217,6 +211,7 @@ body{
     }
 
     .main-nav__menu {
+        /* push ul list to new row & hide*/
         display: none;
         flex-direction: column;
         align-items: center;
@@ -224,6 +219,7 @@ body{
     }
 
     .main-nav__menu-item {
+        /* reset lg screen margin style */
         margin: 0;
         text-align: center;
         font-size: 1.15em;
@@ -231,6 +227,7 @@ body{
     }
 
     .main-nav__menu-item-link {
+        /* item clickable area */
         padding: 0.5em 2.5em;
     }
     
