@@ -101,7 +101,7 @@ body{
 .container__greeting {
     justify-content: center;
     max-width: unset;
-    height: 11em;
+    height: 12em;
 
 }
 
@@ -177,11 +177,11 @@ body{
     /* BLOCKS(components) */
     .main-nav {
         flex-wrap: wrap;
-        position: fixed;
+        position: sticky;
         top: 0;
-        z-index: 1;
+        z-index: 100;
         padding: 0;
-        width: 100%
+        width: 100%;
     }
 
 
@@ -213,10 +213,6 @@ body{
         padding: 0.5em;
     }
     
-    .container__greeting {
-        position: relative;
-        top: 3em;
-    }
     /* MODIFIERS(incremental style changes) */
 
     .main-nav__menu--list-bg-dark {
