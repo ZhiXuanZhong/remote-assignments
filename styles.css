@@ -49,7 +49,7 @@ body{
     display: flex;
     justify-content:space-between;
     padding: 0 3%;
-    min-height: 3em;
+    min-height: 3.5em;
     background-color: #EEEEEE;
 }
 
@@ -174,6 +174,22 @@ body{
         display: flex;
     }
 
+    .bar-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        top: 25%;
+        width: 30px;
+        height: 20px;
+    }
+    
+    .icon-bar {
+        width: 100%;
+        height: 1.5px;
+        background-color: black;
+    }
+
     /* BLOCKS(components) */
     .main-nav {
         flex-wrap: wrap;
@@ -189,6 +205,7 @@ body{
 
     .main-nav__logo {
         padding-left: 7%;
+        min-height: 3.5em;
     }
 
     .main-nav__ham {
@@ -228,3 +245,4 @@ body{
 
 
 }
+
