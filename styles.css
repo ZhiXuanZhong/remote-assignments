@@ -96,6 +96,10 @@ body{
     width: 100%;
 }
 
+.main-nav__menu-item-link:hover {
+    color: #849AAC;
+}
+
 .container__sec-greeting {
     justify-content: center;
     max-width: unset;
@@ -224,6 +228,10 @@ body{
         text-align: center;
         font-size: 1.15em;
         
+    }
+
+    .main-nav__menu-item:hover {
+        background-color: #e4dfdf;
     }
 
     .main-nav__menu-item-link {
