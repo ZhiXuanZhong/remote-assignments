@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-
     <title>Remote Assignment Week1</title>
 </head>
 <body>
@@ -18,30 +17,30 @@
             <a href="#" class="main-nav__logo-link">Website Title / Logo</a>
         </div>
 
-        <label class="main-nav__ham" for="ham-checkbox" id="ham-label">
-            <div class="bar-icon">
+        <div class="main-nav__ham ham__label" >
+            <div class="bar-icon" id="side-menu-open">
                 <div class="icon-bar"></div>
                 <div class="icon-bar"></div>
                 <div class="icon-bar"></div>
             </div>
-        </label>
+        </div>
 
-        <ul class="main-nav__menu main-nav__menu--list-bg-dark">
-            <li class="main-nav__menu-item main-nav__menu-item--list-hr-dark">
+        <ul class="main-nav__menu main-nav__menu--list-bg-light" id="side-menu">
+            <li class="main-nav__menu-item">
                 <a href="#" class="main-nav__menu-item-link">Item 1</a>
             </li>
-            <li class="main-nav__menu-item main-nav__menu-item--list-hr-dark">
+            <li class="main-nav__menu-item">
                 <a href="#" class="main-nav__menu-item-link">Item 2</a>
             </li>
-            <li class="main-nav__menu-item main-nav__menu-item--list-hr-dark">
+            <li class="main-nav__menu-item">
                 <a href="#" class="main-nav__menu-item-link">Item 3</a>
             </li>
-            <li class="main-nav__menu-item main-nav__menu-item--list-hr-dark">
+            <li class="main-nav__menu-item">
                 <a href="#" class="main-nav__menu-item-link">Item 4</a>
             </li>
         </li>
-        <li id="side-menu-close">
-            <div>X</div>
+        <li>
+            <div id="side-menu-close">X</div>
         </li>
         </ul>
     </nav>

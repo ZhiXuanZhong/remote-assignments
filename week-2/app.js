@@ -12,3 +12,15 @@ btnCTA.addEventListener('click', (e) => {
     containerCTA.classList.remove('container__cards--hide')
 
 })
+
+const mainNav = document.querySelector('.main-nav')
+
+mainNav.addEventListener('click', (e) => {
+
+    console.log(e.target.id)
+
+    if (e.target.id ==='side-menu-open' || e.target.id ==='side-menu-close') {
+        document.querySelector("#side-menu").classList.toggle('main-nav__menu--show')
+    }
+
+})
