@@ -43,13 +43,9 @@ Complete the function below to calculate the total price of all products after a
 
 function calculate(data) {
   const { discount, products } = data;
-  let sum = 0;
 
-  products.forEach((product) => {
-    sum += product.price * discount;
-  });
-
-  return sum;
+  return products
+  .reduce((sum, item) => sum + item.price * (1 - discount), 0);
 }
 
 const discountedPrice = calculate({
