@@ -137,6 +137,9 @@ body{
     margin-top: unset;
 }
 
+.container__cards--hide {
+    display: none;
+}
 
 .card--placeholder{
     text-align: center;
