@@ -38,9 +38,6 @@ body{
     display: none;
 }
 
-#ham-checkbox{
-  display: none;
-}
 
 /* BLOCKS(components) */
 
@@ -176,9 +173,6 @@ body{
         align-items: center;
     }
 
-    #ham-checkbox:checked ~ .main-nav__menu{
-        display: flex;
-    }
 
     .bar-icon {
         display: flex;
@@ -219,7 +213,7 @@ body{
 
     .main-nav__menu {
         /* push ul list to new row & hide*/
-        display: none;
+        display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
