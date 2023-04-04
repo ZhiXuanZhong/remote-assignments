@@ -173,6 +173,15 @@ body{
         align-items: center;
     }
 
+    #side-menu-close {
+        display: block;
+        position: absolute;
+        right: 1vw;
+        top: 1vh;
+        font-size: 1.8em;
+        cursor: pointer;
+    }
+
 
     .bar-icon {
         display: flex;
@@ -237,7 +246,7 @@ body{
 
     .main-nav__menu-item-link {
         /* item clickable area */
-        padding: 0.5em 10.5em 0.5em 0;
+        padding: 0.5em 8em 0.5em 0;
     }
     
     /* MODIFIERS(incremental style changes) */
