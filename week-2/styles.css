@@ -215,14 +215,18 @@ body{
         /* push ul list to new row & hide*/
         display: flex;
         flex-direction: column;
-        align-items: center;
-        width: 100%;
+        justify-content: flex-start;
+
+
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        width: 50vw;
     }
 
     .main-nav__menu-item {
         /* reset lg screen margin style */
         margin: 0;
-        text-align: center;
         font-size: 1.15em;
         
     }
@@ -233,7 +237,7 @@ body{
 
     .main-nav__menu-item-link {
         /* item clickable area */
-        padding: 0.5em 2.5em;
+        padding: 0.5em 10.5em 0.5em 0;
     }
     
     /* MODIFIERS(incremental style changes) */
