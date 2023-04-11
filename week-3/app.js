@@ -26,16 +26,18 @@ app.get('/getData', (req,res) => {
     const urlNum = req.query.number
 
     if (urlNum === undefined){
-        return res.send(`
-        <h1>Lack of Parameter</h1>
-        `)
+        return res.send(JSON.stringify({
+            title : "Lack of Parameter",
+            desc : "Enter a Positive integer"
+        }))
     }
 
     if (isNaN(+urlNum) || urlNum < 0){
-        return res.send(`
-        <h1>Wrong Parameter</h1>
-        <p>Positive integer Only! Your request is '${urlNum}'</p>
-        `)
+        return res.send(
+            JSON.stringify({
+            title : "Wrong Parameter",
+            desc : `Positive integer Only! Your request is ${urlNum}`
+        }))
     }
 
     let sum = 0
@@ -43,9 +45,10 @@ app.get('/getData', (req,res) => {
         sum += i
     }
     
-    res.send(`
-    <h1>The result is ${sum}</h1>
-    <p>Base on your request '${urlNum}'</p>
-    `)
+    res.send(
+        JSON.stringify({
+        title : `The result is ${sum}`,
+        desc : `Base on your request: ${urlNum}`
+    }))
 
 })

@@ -1,22 +1,27 @@
-function handleClick () {
-    const sumOutput = document.getElementById('sumOutput').textContent
-    const numInput = document.getElementById('numInput').value
-    
-    const xhr = new XMLHttpRequest()
+async function handleClick() {
+  try {
+    const sumOutput = document.getElementById("sumOutput").textContent;
+    const numInput = document.getElementById("numInput").value;
 
-    xhr.onreadystatechange = () => {                
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            document.getElementById('sumOutput').innerHTML = xhr.responseText
-        }
+    async function getData(url) {
+      const response = await fetch(url);
+      return response.json();
     }
-    
-    if (numInput === ''){
-        xhr.open('GET', `/getData`)
+
+    const result =
+      numInput === ""
+        ? await getData("/getData")
+        : await getData(`/getData?number=${numInput}`);
+
+    document.getElementById("numInput").value = "";
+
+    const { title, desc } = result;
+    document.getElementById("sumOutput").innerHTML = `
+        <h1>${title}</h1>
+        <p>${desc}</p>
+        `;
         
-    } else {
-        xhr.open('GET', `/getData?number=${numInput}`)
-    }
-
-    xhr.send()
-    document.getElementById('numInput').value = ''
+  } catch (error) {
+    console.error(`ERROR: ${error}`);
+  }
 }
