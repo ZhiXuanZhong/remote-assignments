@@ -5,31 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment 3</title>
-    <script>
-        function handleClick () {
-            const sumOutput = document.getElementById('sumOutput').textContent
-            const numInput = document.getElementById('numInput').value
-            
-            const xhr = new XMLHttpRequest()
-
-            xhr.onreadystatechange = () => {                
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    document.getElementById('sumOutput').innerHTML = xhr.responseText
-                }
-            }
-            
-            if (numInput === ''){
-                xhr.open('GET', `/getData`)
-                
-            } else {
-                xhr.open('GET', `/getData?number=${numInput}`)
-            }
-
-            xhr.send()
-            document.getElementById('numInput').value = ''
-            
-        }
-    </script>
+    
 </head>
 <body>
     <div>
@@ -38,5 +14,6 @@
         <button type="submit" onclick="handleClick()">Submit</button>
         <p id="sumOutput"></p>
     </div>
+    <script type="text/javascript" src="/sum.js"></script>
 </body>
 </html>
