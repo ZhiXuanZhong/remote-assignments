@@ -1,4 +1,5 @@
 import express from 'express'
+import cookieParser from 'cookie-parser'
 
 const app = express()
 
@@ -14,6 +15,7 @@ app.listen(port, () => {
 })
 
 app.use(express.static('public'))
+app.use(cookieParser())
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html')
@@ -41,10 +43,22 @@ app.get('/getData', (req, res) => {
     sum += i
   }
 
-  res.send(
-    JSON.stringify({
-      title: `The result is ${sum}`,
-      desc: `Base on your request: ${urlNum}`,
-    })
-  )
+  res.send({
+    title: `The result is ${sum}`,
+    desc: `Base on your request: ${urlNum}`,
+  })
+})
+
+app.get('/myName', (req, res) => {
+  if (!req.cookies.username) {
+    res.sendFile(__dirname + '/public/input_name.html')
+  } else {
+    res.send(`Welcome, ${req.cookies.username}! Good to see you again!`)
+  }
+})
+
+app.get('/trackName', (req, res) => {
+  const username = req.query.username
+  res.cookie('username', username)
+  res.redirect('/myName')
 })
