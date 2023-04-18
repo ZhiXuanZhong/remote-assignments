@@ -5,7 +5,6 @@ function Nav() {
 
   function handleClick() {
     setIsOpen(!isOpen)
-    console.log('here');
   }
 
   return (
