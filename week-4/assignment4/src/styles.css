@@ -1,0 +1,76 @@
+/* RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+/* GENERAL STYLE */
+.App {
+  font-family: sans-serif;
+  margin: 2em;
+}
+
+/* Element */
+
+.container {
+  max-width: 70%;
+  min-width: 400px;
+  margin: 0 auto;
+  padding: 1em;
+  border: 1px solid #cdd7df;
+  border-bottom: 0px;
+}
+Í .container:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.container:last-of-type {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom: 1px solid #cdd7df;
+}
+
+.title {
+  margin-right: 0.3em;
+  font-size: 1.9em;
+  font-weight: 800;
+  color: #006ae2;
+}
+
+.tag {
+  display: inline-block;
+  vertical-align: text-bottom;
+  padding: 3px 14px;
+  margin-top: 0.6em;
+  margin-right: 0.3em;
+  font-size: 0.9em;
+  border-radius: 500px;
+}
+
+.desc {
+  padding: 0.9em 0;
+  color: #57626d;
+}
+
+.load-more {
+  margin-top: 1.5em;
+  text-align: center;
+  color: #006ae2;
+  font-weight: 500;
+  font-size: 1em;
+}
+/* MODIFIERS(incremental style changes) */
+
+.tag--light {
+  border: 1px solid #cdd7df;
+  color: #55606b;
+}
+
+.tag--blue {
+  color: #006ae2;
+  background-color: #d7f5ff;
+}
