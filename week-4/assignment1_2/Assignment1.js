@@ -14,9 +14,5 @@ function delayedResult(n1, n2, delayTime, callback) {
   })
   // 5 (-5+10) will be shown in an alert dialog after 2 seconds
   
-  setTimeout(function () {
-    console.log('here')
-  }, 3000)
-  
   
   
