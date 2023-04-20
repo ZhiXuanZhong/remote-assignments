@@ -2,9 +2,12 @@
   "name": "week4_assignment3",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://zhixuanzhong.github.io/remote-assignments/assignment3/dist/",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist -e ./week-4/assignment3/dist/ -b main -m 'Publish' -n",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -16,6 +19,7 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
+    "gh-pages": "^5.0.0",
     "vite": "^4.2.0"
   }
 }
