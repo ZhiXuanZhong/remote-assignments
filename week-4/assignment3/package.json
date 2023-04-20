@@ -2,7 +2,7 @@
   "name": "week4_assignment3",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://zhixuanzhong.github.io/remote-assignments/assignment3/dist/",
+  "homepage": "https://zhixuanzhong.github.io/remote-assignments/week-4/assignment3/dist/",
   "type": "module",
   "scripts": {
     "dev": "vite",
