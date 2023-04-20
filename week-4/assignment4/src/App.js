@@ -23,10 +23,14 @@ export default function App() {
     }
   }
 
-  
+  let isInitial = true
+
   useEffect(() => {
-    dataFetcher()
-    setPage(2)
+    if (isInitial) {
+      dataFetcher()
+      setPage(2)
+    }
+    isInitial = false
   }, [])
 
   function handleMore() {
