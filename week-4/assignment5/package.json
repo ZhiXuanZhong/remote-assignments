@@ -1,6 +1,7 @@
 {
   "name": "assignment-5-implement-counter-by-react-advanced-optional",
   "version": "1.0.0",
+  "homepage": "https://zhixuanzhong.github.io/remote-assignments/week-4/assignment5/build/",
   "description": "",
   "keywords": [],
   "main": "src/index.js",
@@ -12,10 +13,13 @@
   },
   "devDependencies": {
     "@babel/runtime": "7.13.8",
+    "gh-pages": "^5.0.0",
     "typescript": "4.1.3"
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build -n",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"

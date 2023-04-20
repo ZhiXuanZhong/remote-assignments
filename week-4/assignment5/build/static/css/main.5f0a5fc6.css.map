@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.5f0a5fc6.css","mappings":"AAAA,KACE,sBACF,CAEA,EACE,UACF","sources":["styles.css"],"sourcesContent":[".App {\n  font-family: sans-serif;\n}\n\n* {\n  margin: 5px;\n}\n"],"names":[],"sourceRoot":""}
