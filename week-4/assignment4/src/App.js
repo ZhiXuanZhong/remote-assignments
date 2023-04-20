@@ -5,12 +5,11 @@ import './styles.css'
 export default function App() {
   const [repoList, setRepoList] = useState([])
   const [page, setPage] = useState(1)
+  const url = `https://api.github.com/orgs/facebook/repos?per_page=5&page=${page}`
 
   async function dataFetcher() {
     try {
-      const res = await fetch(
-        `https://api.github.com/orgs/facebook/repos?per_page=5&page=${page}`
-      )
+      const res = await fetch(url)
       const data = await res.json()
 
       if (data.length === 0) {
@@ -23,14 +22,26 @@ export default function App() {
     }
   }
 
-  let isInitial = true
-
   useEffect(() => {
-    if (isInitial) {
-      dataFetcher()
-      setPage(2)
+    let isInitial = true
+
+    async function initLoad() {
+      fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+          if (isInitial) {
+            setRepoList(data)
+            setPage((prev) => prev + 1)
+          }
+        })
     }
-    isInitial = false
+
+    initLoad()
+
+    return () => {
+      isInitial = false
+    }
+    
   }, [])
 
   function handleMore() {
@@ -43,9 +54,11 @@ export default function App() {
       {repoList.map((item) => {
         return <DataRow {...item} key={item.id} />
       })}
-      <h1 className="load-more" onClick={handleMore}>
-        More
-      </h1>
+      {repoList.length > 1 && (
+        <h1 className="load-more" onClick={handleMore}>
+          More
+        </h1>
+      )}
     </div>
   )
 }
