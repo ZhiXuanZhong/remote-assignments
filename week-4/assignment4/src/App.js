@@ -7,10 +7,15 @@ export default function App() {
   const [page, setPage] = useState(1)
   const url = `https://api.github.com/orgs/facebook/repos?per_page=5&page=${page}`
 
-  async function dataFetcher() {
+  async function dataFetcher(isInitial) {
     try {
       const res = await fetch(url)
       const data = await res.json()
+
+      if (isInitial) {
+        setRepoList(data)
+        return
+      }
 
       if (data.length === 0) {
         alert('End of list')
@@ -25,23 +30,11 @@ export default function App() {
   useEffect(() => {
     let isInitial = true
 
-    async function initLoad() {
-      fetch(url)
-        .then((res) => res.json())
-        .then((data) => {
-          if (isInitial) {
-            setRepoList(data)
-            setPage((prev) => prev + 1)
-          }
-        })
-    }
-
-    initLoad()
+    dataFetcher(isInitial)
 
     return () => {
       isInitial = false
     }
-    
   }, [])
 
   function handleMore() {
